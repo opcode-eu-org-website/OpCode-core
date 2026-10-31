@@ -48,7 +48,7 @@ def load_app_info(filepath: str):
 	
 	filepath = os.path.expanduser(filepath)
 	if not os.path.isabs(filepath):
-		script_dir = os.path.dirname(os.path.abspath(__file__))
+		script_dir = os.path.dirname(os.path.realpath(__file__))
 		filepath = os.path.join(script_dir, filepath)
 	
 	with open(filepath, 'r') as file:
